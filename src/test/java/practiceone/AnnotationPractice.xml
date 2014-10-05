@@ -9,6 +9,12 @@
       		<!-- <include name="testCaseAnnotationTest002"/> -->
       	</methods>
       </class>
+      <class name="practiceone.AnnotationPractice1">
+      	<methods>
+      		<include name="testCaseAnnotationTest001"/>
+      		<include name="testCaseAnnotationTest002"/>
+      	</methods>
+      </class>
     </classes>
   </test> <!-- Default test -->
 </suite> <!-- Default suite -->
