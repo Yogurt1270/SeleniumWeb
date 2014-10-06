@@ -30,7 +30,7 @@ public class LaunchChrome {
 		chromedriver = new ChromeDriver(capabilities);
 	}
 	
-	@Test
+	//@Test
 	public void openMailDot126() {
 		chromedriver.manage().window().maximize();
 		chromedriver.get("http://www.126.com");
@@ -42,6 +42,27 @@ public class LaunchChrome {
 		}
 		chromedriver.findElement(By.xpath("//input[@id='idInput']")).sendKeys("FireflyAutomation");
 		chromedriver.findElement(By.xpath("//input[@id='pwdInput']")).sendKeys("Firefly", Keys.ENTER);
+	}
+	
+	@Test
+	public void openMDotYintai() {
+		chromedriver.manage().window().maximize();
+		chromedriver.get("http://m.yintai.com");
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		chromedriver.findElement(By.xpath("//input[@id='txtKeywordHead']")).clear();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		chromedriver.findElement(By.xpath("//input[@id='txtKeywordHead']")).sendKeys("PUMA");
+		chromedriver.findElement(By.xpath("//input[@id='btnSearchHead']")).click();
 	}
 	
 	@AfterClass
