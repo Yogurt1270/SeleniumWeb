@@ -44,6 +44,7 @@ public class LaunchFirefox {
 
 	@Test
 	public void openMailDot163() {
+		ffdriver.manage().window().maximize();
 		ffdriver.get("http://mail.163.com");
 		try {
 			Thread.sleep(5000);

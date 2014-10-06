@@ -21,14 +21,15 @@ public class LaunchInternetExplorer {
 				.setCapability(
 						InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
 						true);
-		capabilities.setCapability(InternetExplorerDriver.IE_SWITCHES,
-				"-private");
+		capabilities.setCapability(InternetExplorerDriver.IE_SWITCHES, 
+				"-private"); //清除浏览器Cookies
 		capabilities.setCapability("ignoreZoomSetting", "true");
 		iedriver = new InternetExplorerDriver(capabilities);
 	}
 
 	@Test
 	public void openMailDotQQ() {
+		iedriver.manage().window().maximize();
 		iedriver.get("http://mail.qq.com");
 		try {
 			Thread.sleep(5000);

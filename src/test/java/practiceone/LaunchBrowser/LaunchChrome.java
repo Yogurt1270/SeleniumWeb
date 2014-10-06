@@ -29,6 +29,7 @@ public class LaunchChrome {
 	}
 	@Test
 	public void openMailDotQQ() {
+		chromedriver.manage().window().maximize();
 		chromedriver.get("http://mail.qq.com");
 		try {
 			Thread.sleep(5000);
