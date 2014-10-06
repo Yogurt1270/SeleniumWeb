@@ -26,6 +26,7 @@ public class Browser {
 	public Browser(BrowserType browsertype) {
 		switch (browsertype) {
 		case Firefox:
+			System.setProperty("webdriver.firefox.bin", "C:\\Program Files\\Mozilla Firefox\\firefox.exe");
 			capabilities = DesiredCapabilities.firefox();
 			File firebug = new File(projectpath
 					+ "/src/main/resources/plugin/firebug-2.0.3.xpi");
@@ -64,7 +65,6 @@ public class Browser {
 					Arrays.asList("--start-maximized"));
 			capabilities.setCapability("chrome.switches", Arrays
 					.asList("--proxy-server=http://your-proxy-domain:4443"));
-			webdriver = new ChromeDriver(capabilities);
 			if (nodeurl.equals(""))
 				webdriver = new ChromeDriver(capabilities);
 			else
@@ -75,6 +75,7 @@ public class Browser {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+			break;
 
 		case InternetExplorer:
 			System.setProperty("webdriver.ie.driver", projectpath
@@ -97,8 +98,11 @@ public class Browser {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+			break;
+			
 		default:
 			break;
+			
 		}
 	}
 }
