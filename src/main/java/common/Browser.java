@@ -30,7 +30,7 @@ public class Browser {
 					"C:\\Program Files\\Mozilla Firefox\\firefox.exe");
 			capabilities = DesiredCapabilities.firefox();
 			File firebug = new File(projectpath
-					+ "/src/main/resources/plugin/firebug-2.0.3.xpi");
+					+ "/src/main/resources/plugin/firebug-2.0.4.xpi");
 			File firepath = new File(projectpath
 					+ "/src/main/resources/plugin/firepath-0.9.7-fx.xpi");
 			// 实例化对象FirefoxProfile
@@ -41,7 +41,7 @@ public class Browser {
 				firefoxprofile.setPreference(
 						"webdriver.accept.untrusted.certs", "true");
 				firefoxprofile.setPreference(
-						"extensions.firebug.currentVersion", "2.0.3");
+						"extensions.firebug.currentVersion", "2.0.4");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
