@@ -26,19 +26,22 @@ public class Browser {
 	public Browser(BrowserType browsertype) {
 		switch (browsertype) {
 		case Firefox:
-			System.setProperty("webdriver.firefox.bin", "C:\\Program Files\\Mozilla Firefox\\firefox.exe");
+			System.setProperty("webdriver.firefox.bin",
+					"C:\\Program Files\\Mozilla Firefox\\firefox.exe");
 			capabilities = DesiredCapabilities.firefox();
 			File firebug = new File(projectpath
 					+ "/src/main/resources/plugin/firebug-2.0.3.xpi");
 			File firepath = new File(projectpath
 					+ "/src/main/resources/plugin/firepath-0.9.7-fx.xpi");
+			// 实例化对象FirefoxProfile
+			firefoxprofile = new FirefoxProfile();
 			try {
 				firefoxprofile.addExtension(firebug);
 				firefoxprofile.addExtension(firepath);
 				firefoxprofile.setPreference(
 						"webdriver.accept.untrusted.certs", "true");
 				firefoxprofile.setPreference(
-						"extensions.firebug.currentVersion", "1.12.1");
+						"extensions.firebug.currentVersion", "2.0.3");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -58,7 +61,7 @@ public class Browser {
 			break;
 
 		case Chrome:
-			System.getProperty("webdriver.chrome.exe", projectpath
+			System.setProperty("webdriver.chrome.exe", projectpath
 					+ "/src/main/resources/plugin/chromedriver.exe");
 			capabilities = DesiredCapabilities.chrome();
 			capabilities.setCapability("chrome.switches",
@@ -99,10 +102,10 @@ public class Browser {
 					e.printStackTrace();
 				}
 			break;
-			
+
 		default:
 			break;
-			
+
 		}
 	}
 }
