@@ -27,7 +27,7 @@ public class Browser {
 		switch (browsertype) {
 		case Firefox:
 			System.setProperty("webdriver.firefox.bin",
-					"C:\\Program Files\\Mozilla Firefox\\firefox.exe");
+					"E:\\Program Files\\Mozilla Firefox\\firefox.exe");
 			capabilities = DesiredCapabilities.firefox();
 			File firebug = new File(projectpath
 					+ "/src/main/resources/plugin/firebug-2.0.4.xpi");
