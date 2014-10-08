@@ -5,7 +5,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Testcase_Inbox extends PracticeTwoTestSuite {
+public class Testcase_Inbox extends InitializeBrowserTestSuite {
 
 	@BeforeClass
 	public void openHomepage() {
@@ -21,7 +21,7 @@ public class Testcase_Inbox extends PracticeTwoTestSuite {
 
 	@Test
 	public void clickInbox() {
-		browser.webdriver.findElement(By.xpath("//span[text()='æ”¶ä»¶ç®±']")).click();
+		browser.webdriver.findElement(By.xpath("//span[text()='ÊÕ¼þÏä']")).click();
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
@@ -32,7 +32,7 @@ public class Testcase_Inbox extends PracticeTwoTestSuite {
 
 	@AfterClass
 	public void returnHomepage() {
-		browser.webdriver.findElement(By.xpath("//div[text()='é¦–é¡µ']")).click();
+		browser.webdriver.findElement(By.xpath("//div[text()='Ê×Ò³']")).click();
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {

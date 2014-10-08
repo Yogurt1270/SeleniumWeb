@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeTest;
 import common.Browser;
 import common.BrowserType;
 
-public class PracticeTwoTestSuite {
+public class InitializeBrowserTestSuite {
 	protected static Browser browser = new Browser(BrowserType.Firefox);
 
 	@BeforeTest
@@ -28,7 +28,7 @@ public class PracticeTwoTestSuite {
 	
 	@AfterTest
 	public void closeBrowser(){
-		browser.webdriver.findElement(By.xpath("//a[text()='é€€å‡º']")).click();
+		browser.webdriver.findElement(By.xpath("//a[text()='ÍË³ö']")).click();
 		browser.webdriver.quit();
 	}
 }
