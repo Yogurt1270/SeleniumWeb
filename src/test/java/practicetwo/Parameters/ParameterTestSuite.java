@@ -28,6 +28,7 @@ public class ParameterTestSuite {
 		browser.webdriver.get("http://m.yintai.com");
 		browser.webdriver.findElement(By.xpath("//input[@id='txtKeywordHead']")).clear();
 		browser.webdriver.findElement(By.xpath("//input[@id='txtKeywordHead']")).sendKeys(pp.getValue("Keyword"), Keys.ENTER);
+		browser.webdriver.findElement(By.xpath("//input[@id='btnSearchHead']")).click();
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
