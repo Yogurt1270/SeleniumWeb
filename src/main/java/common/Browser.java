@@ -89,7 +89,7 @@ public class Browser {
 							InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
 							true);
 			capabilities.setCapability(InternetExplorerDriver.IE_SWITCHES,
-					"-private"); // 清除浏览器Cookies
+					"-private"); // Clear cookies
 			capabilities.setCapability("ignoreZoomSetting", "true");
 			if (nodeurl.equals(""))
 				webdriver = new InternetExplorerDriver(capabilities);
@@ -101,6 +101,7 @@ public class Browser {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+			webdriver.manage().window().maximize();
 			break;
 
 		default:

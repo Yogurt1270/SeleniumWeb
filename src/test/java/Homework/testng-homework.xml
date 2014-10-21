@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default suite">
+  <test verbose="2" name="Default test">
+    <classes>
+        <!-- Homepage -->
+      <class name="Homework.TestSuiteHomepage">
+        <methods>
+          <include name="testcaseHomepage"/>
+        </methods>
+      </class>
+      <!-- Login -->
+      <class name="Homework.TestSuiteLogin">
+          <methods>
+              <include name="testcaseLogin" />
+          </methods>
+      </class>
+      <!-- SecKill -->
+      <class name="Homework.TestSuiteSecKill">
+          <methods>
+              <include name="testcaseSecKill" />
+          </methods>
+      </class>
+      
+    </classes>
+  </test> <!-- Default test -->
+</suite> <!-- Default suite -->

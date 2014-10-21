@@ -4,7 +4,6 @@ import junit.framework.Assert;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -14,21 +13,20 @@ import common.BrowserType;
 import common.WaitFor;
 
 public class TestSuiteAssert {
-	protected static Browser browser = new Browser(BrowserType.Firefox);
-	WebDriver driver = browser.webdriver;
-	WaitFor waitfor;
+	protected static Browser browser = new Browser(BrowserType.InternetExplorer);
+	WebDriver driverassert = browser.webdriver;
+	WaitFor waitforassert = new WaitFor(driverassert);
 
 	@BeforeClass
 	public void openBrowser() {
 		browser.webdriver.get("http://www.yintai.com");
-		waitfor = new WaitFor(driver);
 	}
 
-	// @Test
+	@Test
 	public void testcase_Assert() {
-		System.out.println("for test");
+		System.out.println("Loading homepage...");
 		// Set wait time
-		waitfor.waitForElementIsable("//a[@id='menu-cate-title']");
+		waitforassert.waitForElementIsable("//a[@id='menu-cate-title']");
 		boolean we = browser.webdriver.findElement(
 				By.xpath("//a[@id='menu-cate-title']")).isDisplayed();
 		Assert.assertEquals(we, true);
@@ -36,7 +34,7 @@ public class TestSuiteAssert {
 
 	@Test
 	public void testcase_Waitfor() {
-		waitfor.waitForElementIsdisplay("//a[@class='reg']");
+		waitforassert.waitForElementIsdisplay("//a[@class='reg']");
 		boolean display = browser.webdriver.findElement(
 				By.xpath("//a[@class='reg']")).isDisplayed();
 		if (!display) {
